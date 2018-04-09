@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @sun_glass.brand %>
+</p>
+
+<p>
+  <strong>Frame:</strong>
+  <%= @sun_glass.frame %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @sun_glass.description %>
+</p>
+
+<p>
+  <strong>Condition:</strong>
+  <%= @sun_glass.condition %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @sun_glass.title %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @sun_glass.price %>
+</p>
+
+<%= link_to 'Edit', edit_sun_glass_path(@sun_glass) %> |
+<%= link_to 'Back', sun_glasses_path %>

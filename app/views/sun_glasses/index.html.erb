@@ -1,0 +1,44 @@
+<% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Browse our latest vintage frames
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<div class="sun_glass-index-grid pt4">
+  <% @instruments.each do |sun_glass| %>
+
+    <div class="sun_glass border-light">
+      <div class="sun_glass-thumb">
+      <%= link_to image_tag(sun_glass.image_url(:thumb)), sun_glass %>
+
+      <% if sun_glass.condition? %>
+        <div class="condition">
+          <span class="tag is-dark"><%= sun_glass.condition %></span>
+        </div>
+      <% end %>
+      </div>
+
+
+    <div class="pa3">
+
+      <h3 class="fw7 f4 title"><%= link_to sun_glass.title, instrument %></h3>
+
+      <p class="has-text-gray fg pt1">Sold by <%= sun_glass.user.name %></p>
+
+      <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(sun_glass.price) %></p>
+
+      <% if sun_glass_author(sun_glass) %>
+         <%= link_to 'Edit', edit_sun_glass_path(sun_glass), class: "button is-small" %>
+         <%= link_to 'Delete', sun_glass, method: :delete, data: { confirm: "Are you sure ?" }, class: "button is-small" %>
+      <% end %>
+
+    </div>
+  </div>
+  <% end %>
+</div>

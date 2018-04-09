@@ -1,0 +1,16 @@
+<% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Sell your frames!
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+<div class="pv4">
+<%= render 'form', sun_glass: @sun_glass %>
+</div>
+
+<%= link_to 'Back', sun_glasses_path %>
